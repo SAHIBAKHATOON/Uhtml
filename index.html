@@ -1,81 +1,9 @@
-<!--  
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Property Listings</title>
-        <style>
-            .property {
-                border: 1px solid #ccc;
-                padding: 16px;
-                margin: 16px 0;
-            }
-            .property img {
-                max-width: 100%;
-                height: auto;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="properties"></div>
-
-        <script src="https://unpkg.com/uhtml@3.0.1/es.js"></script>
-        <script>
-            const properties = [
-                {
-                    title: 'Hello world',
-                    
-                    description: 'Lorem ipsum lorem ipsum.'
-                },
-                {
-                    title: 'Hello world',
-                    
-                    description: 'Lorem ipsum lorem ipsum.'
-                },
-            ];
-    
-            const createPropertyElement = ({title, image, description}) => {
-                const propertyDiv = document.createElement('div');
-                propertyDiv.className = 'property';
-    
-                const titleElement = document.createElement('h2');
-                titleElement.textContent = title;
-    
-                const imageElement = document.createElement('img');
-                // imageElement.src = image;
-                imageElement.alt = title;
-    
-                const descriptionElement = document.createElement('p');
-                descriptionElement.textContent = description;
-    
-                propertyDiv.appendChild(titleElement);
-                propertyDiv.appendChild(imageElement);
-                propertyDiv.appendChild(descriptionElement);
-    
-                return propertyDiv;
-            };
-    
-            const renderProperties = () => {
-                const propertiesContainer = document.getElementById('properties');
-                properties.forEach(property => {
-                    const propertyElement = createPropertyElement(property);
-                    propertiesContainer.appendChild(propertyElement);
-                });
-            };
-    
-            renderProperties();
-        </script>
-    </body>
-    </html>
-     -->
      <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello world</title>
-  <script src="https://unpkg.com/uhtml"></script>
   <script src="https://unpkg.com/uhtml@3.0.1/es.js"></script>
   <style>
     body {
