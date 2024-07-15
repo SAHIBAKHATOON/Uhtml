@@ -1,0 +1,150 @@
+<!--  
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Property Listings</title>
+        <style>
+            .property {
+                border: 1px solid #ccc;
+                padding: 16px;
+                margin: 16px 0;
+            }
+            .property img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="properties"></div>
+
+        <script src="https://unpkg.com/uhtml@3.0.1/es.js"></script>
+        <script>
+            const properties = [
+                {
+                    title: 'Hello world',
+                    
+                    description: 'Lorem ipsum lorem ipsum.'
+                },
+                {
+                    title: 'Hello world',
+                    
+                    description: 'Lorem ipsum lorem ipsum.'
+                },
+            ];
+    
+            const createPropertyElement = ({title, image, description}) => {
+                const propertyDiv = document.createElement('div');
+                propertyDiv.className = 'property';
+    
+                const titleElement = document.createElement('h2');
+                titleElement.textContent = title;
+    
+                const imageElement = document.createElement('img');
+                // imageElement.src = image;
+                imageElement.alt = title;
+    
+                const descriptionElement = document.createElement('p');
+                descriptionElement.textContent = description;
+    
+                propertyDiv.appendChild(titleElement);
+                propertyDiv.appendChild(imageElement);
+                propertyDiv.appendChild(descriptionElement);
+    
+                return propertyDiv;
+            };
+    
+            const renderProperties = () => {
+                const propertiesContainer = document.getElementById('properties');
+                properties.forEach(property => {
+                    const propertyElement = createPropertyElement(property);
+                    propertiesContainer.appendChild(propertyElement);
+                });
+            };
+    
+            renderProperties();
+        </script>
+    </body>
+    </html>
+     -->
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello world</title>
+  <script src="https://unpkg.com/uhtml"></script>
+  <script src="https://unpkg.com/uhtml@3.0.1/es.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .property-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .property-card h2 {
+      margin: 0 0 10px;
+    }
+    .property-card p {
+      margin: 0 0 5px;
+    }
+    .property-card strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hello world</h1>
+  </header>
+  <div class="container" id="app"></div>
+
+  <script>
+    const { render, html } = uhtml;
+
+    const properties = [
+      { title: "Cozy Apartment", description: "A cozy apartment in the city center.", price: "$1,200/month" },
+      { title: "Spacious House", description: "A spacious house with a garden.", price: "$2,500/month" },
+      { title: "Modern Studio", description: "A modern studio for young professionals.", price: "$900/month" },
+    ];
+
+    const PropertyCard = ({ title, description, price }) => html`
+      <div class="property-card">
+        <h2>${title}</h2>
+        <p>${description}</p>
+        <strong>${price}</strong>
+      </div>
+    `;
+
+    const App = () => html`
+      ${properties.map(property => PropertyCard(property))}
+    `;
+
+    render(document.getElementById('app'), App());
+  </script>
+</body>
+</html>
+
+     
